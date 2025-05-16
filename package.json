@@ -15,6 +15,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.797.0",
     "@aws-sdk/lib-storage": "^3.797.0",
+    "@prisma/client": "^6.7.0",
     "@terraformer/wkt": "^2.2.1",
     "axios": "^1.9.0",
     "body-parser": "^2.2.0",
@@ -25,6 +26,7 @@
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.2",
+    "prisma": "^6.7.0",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
