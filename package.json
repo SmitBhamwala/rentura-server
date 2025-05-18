@@ -7,7 +7,7 @@
     "start": "npm run build && node dist/index.js",
     "dev": "npm run build && concurrently \"npx tsc -w\" \"nodemon --exec ts-node src/index.ts\"",
     "seed": "ts-node prisma/seed.ts",
-    "prisma:generate": "prisma/generate",
+    "prisma:generate": "prisma generate",
     "postprisma:generate": "shx cp -r node_modules/.prisma/client/index.d.ts ../rentura-client/src/types/prismaTypes.d.ts"
   },
   "keywords": [],

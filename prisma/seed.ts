@@ -1,4 +1,4 @@
-import { PrismaClient, Prisma } from "@prisma/client";
+import { Prisma, PrismaClient } from "@prisma/client";
 import fs from "fs";
 import path from "path";
 
@@ -40,7 +40,7 @@ async function resetSequence(modelName: string) {
   ).findMany({
     select: { id: true },
     orderBy: { id: "desc" },
-    take: 1,
+    take: 1
   });
 
   if (maxIdResult.length === 0) return;
@@ -85,7 +85,7 @@ async function main() {
     "tenant.json", // No dependencies
     "lease.json", // Depends on property and tenant
     "application.json", // Depends on property and tenant
-    "payment.json", // Depends on lease
+    "payment.json" // Depends on lease
   ];
 
   // Delete all existing data
@@ -107,7 +107,7 @@ async function main() {
       try {
         for (const item of jsonData) {
           await model.create({
-            data: item,
+            data: item
           });
         }
         console.log(`Seeded ${modelName} with data from ${fileName}`);
