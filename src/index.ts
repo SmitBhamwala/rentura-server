@@ -4,6 +4,10 @@ import dotenv from "dotenv";
 import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
+import { authMiddleware } from "./middleware/authMiddleware";
+
+import tenantRoutes from "./routes/tenantRoutes";
+import managerRoutes from "./routes/managerRoutes";
 
 /* ROUTE IMPORT */
 
@@ -22,6 +26,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
+app.use("/managers", authMiddleware(["manager"]), managerRoutes);
 
 /* SERVER */
 const PORT = process.env.PORT || 3002;
