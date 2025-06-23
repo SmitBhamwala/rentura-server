@@ -6,6 +6,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { authMiddleware } from "./middleware/authMiddleware";
 
+import propertyRoutes from "./routes/propertyRoutes";
 import tenantRoutes from "./routes/tenantRoutes";
 import managerRoutes from "./routes/managerRoutes";
 
@@ -27,6 +28,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.use("/properties", propertyRoutes);
 app.use("/tenants", authMiddleware(["tenant"]), tenantRoutes);
 app.use("/managers", authMiddleware(["manager"]), managerRoutes);
 
