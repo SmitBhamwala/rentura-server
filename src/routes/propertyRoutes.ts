@@ -1,8 +1,7 @@
 import express from "express";
 import {
   getProperties,
-  // getProperty,
-  // createProperty,
+  getProperty,
 } from "../controllers/propertyControllers";
 import { authMiddleware } from "../middleware/authMiddleware";
 import multer from "multer";
@@ -13,12 +12,6 @@ const upload = multer({ storage: storage });
 const router = express.Router();
 
 router.get("/", getProperties);
-// router.get("/:id", getProperty);
-// router.post(
-//   "/",
-//   authMiddleware(["manager"]),
-//   upload.array("photos"),
-//   createProperty
-// );
+router.get("/:id", getProperty);
 
 export default router;

@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 
 import { PrismaClient, Prisma } from "@prisma/client";
+import { wktToGeoJSON } from "@terraformer/wkt";
 
 const prisma = new PrismaClient();
 
@@ -141,3 +142,49 @@ export const getProperties = async (
     });
   }
 };
+
+export const getProperty = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { id } = req.params;
+
+    const property = await prisma.property.findUnique({
+      where: { id: Number(id) },
+      include: {
+        location: true,
+      },
+    });
+
+    if (property) {
+      const coordinates: { coordinates: string }[] = await prisma.$queryRaw`
+        SELECT ST_AsText(coordinates) as coordinates
+        FROM "Location"
+        WHERE id = ${property.location.id}
+      `;
+      const geoJson: any = wktToGeoJSON(coordinates[0].coordinates || "");
+      const longitude = geoJson.coordinates[0];
+      const latitude = geoJson.coordinates[1];
+
+      const propertyWithCoordinates = {
+        ...property,
+        location: {
+          ...property.location,
+          coordinates: { longitude, latitude },
+        },
+      };
+      res.status(200).json(propertyWithCoordinates);
+    }
+
+    if (!property) {
+      res.status(404).json({ message: "Property not found" });
+      return;
+    }
+  } catch (error: any) {
+    res.status(500).json({
+      message: `Error retrieving property: ${error.message}`,
+    });
+  }
+};
+
