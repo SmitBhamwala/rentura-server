@@ -78,6 +78,7 @@ export const updateTenant = async (
     });
   }
 };
+
 export const getCurrentResidences = async (
   req: Request,
   res: Response
@@ -117,6 +118,76 @@ export const getCurrentResidences = async (
   } catch (error: any) {
     res.status(500).json({
       message: `Error retrieving tenant residences: ${error.message}`,
+    });
+  }
+};
+
+export const addFavoriteProperty = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { cognitoId, propertyId } = req.params;
+
+    const tenant = await prisma.tenant.findUnique({
+      where: { cognitoId },
+      include: {
+        favorites: true,
+      },
+    });
+
+    const propertyIdNumber = Number(propertyId);
+    const existingFavorites = tenant?.favorites || [];
+    if (
+      !existingFavorites.some((favorite) => favorite.id === propertyIdNumber)
+    ) {
+      const updatedTenant = await prisma.tenant.update({
+        where: { cognitoId },
+        data: {
+          favorites: {
+            connect: {
+              id: propertyIdNumber,
+            },
+          },
+        },
+        include: { favorites: true },
+      });
+      res.json(updatedTenant);
+    } else {
+      res.status(409).json({
+        message: "Property already added as favorite",
+      });
+    }
+  } catch (error: any) {
+    res.status(500).json({
+      message: `Error adding favorite property: ${error.message}`,
+    });
+  }
+};
+
+export const removeFavoriteProperty = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { cognitoId, propertyId } = req.params;
+    const propertyIdNumber = Number(propertyId);
+
+    const updatedTenant = await prisma.tenant.update({
+      where: { cognitoId },
+      data: {
+        favorites: {
+          disconnect: {
+            id: propertyIdNumber,
+          },
+        },
+      },
+      include: { favorites: true },
+    });
+    res.json(updatedTenant);
+  } catch (error: any) {
+    res.status(500).json({
+      message: `Error removing favorite property: ${error.message}`,
     });
   }
 };
