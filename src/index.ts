@@ -6,13 +6,12 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { authMiddleware } from "./middleware/authMiddleware";
 
+/* ROUTE IMPORT */
 import applicationRoutes from "./routes/applicationRoutes";
 import leaseRoutes from "./routes/leaseRoutes";
 import managerRoutes from "./routes/managerRoutes";
 import propertyRoutes from "./routes/propertyRoutes";
 import tenantRoutes from "./routes/tenantRoutes";
-
-/* ROUTE IMPORT */
 
 /* CONFIGURATIONS */
 dotenv.config();
@@ -39,5 +38,5 @@ app.use("/managers", authMiddleware(["manager"]), managerRoutes);
 /* SERVER */
 const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Rentura Server is running on port ${PORT}`);
 });
