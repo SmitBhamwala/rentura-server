@@ -1,92 +1,101 @@
 [
   {
     "id": 1,
-    "country": "United States",
-    "city": "Pasadena",
-    "state": "CA",
-    "address": "123 Colorado Blvd",
-    "postalCode": "91105",
-    "coordinates": "POINT(-118.144516 34.147785)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Sughad",
+    "postalCode": "382424",
+    "coordinates": "POINT(72.623027 23.119875)"
   },
   {
     "id": 2,
-    "country": "United States",
-    "city": "Santa Monica",
-    "state": "CA",
-    "address": "456 Ocean Ave",
-    "postalCode": "90401",
-    "coordinates": "POINT(-118.496513 34.013654)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Ashram Road",
+    "postalCode": "380009",
+    "coordinates": "POINT(72.571899 23.029266)"
   },
   {
     "id": 3,
-    "country": "United States",
-    "city": "Burbank",
-    "state": "CA",
-    "address": "789 Hollywood Way",
-    "postalCode": "91505",
-    "coordinates": "POINT(-118.328661 34.180839)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Makarba",
+    "postalCode": "380051",
+    "coordinates": "POINT(72.509802 22.999805)"
   },
   {
     "id": 4,
-    "country": "United States",
-    "city": "Long Beach",
-    "state": "CA",
-    "address": "101 Pine Ave",
-    "postalCode": "90802",
-    "coordinates": "POINT(-118.192604 33.766720)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Kankaria",
+    "postalCode": "380022",
+    "coordinates": "POINT(72.59571815973835 23.00773056256388)"
   },
   {
     "id": 5,
-    "country": "United States",
-    "city": "New York",
-    "state": "NY",
-    "address": "555 Manhattan Ave",
-    "postalCode": "10001",
-    "coordinates": "POINT(-74.005941 40.712784)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Chandkheda",
+    "postalCode": "382424",
+    "coordinates": "POINT(72.59769281881162 23.110017067963902)"
   },
   {
     "id": 6,
-    "country": "United States",
-    "city": "Malibu",
-    "state": "CA",
-    "address": "888 Malibu Road",
-    "postalCode": "90265",
-    "coordinates": "POINT(-118.774518 34.025922)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Naroda",
+    "postalCode": "382330",
+    "coordinates": "POINT(72.64939002515594 23.072469624122775)"
   },
   {
     "id": 7,
-    "country": "United States",
-    "city": "Glendale",
-    "state": "CA",
-    "address": "777 Brand Blvd",
-    "postalCode": "91203",
-    "coordinates": "POINT(-118.254708 34.142508)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Gota",
+    "postalCode": "382481",
+    "coordinates": "POINT(72.53644460921005 23.102221508976193)"
   },
   {
     "id": 8,
-    "country": "United States",
-    "city": "Torrance",
-    "state": "CA",
-    "address": "555 Torrance Blvd",
-    "postalCode": "90503",
-    "coordinates": "POINT(-118.352575 33.835849)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Nikol",
+    "postalCode": "380038",
+    "coordinates": "POINT(72.66916198309178 23.049759905132614)"
   },
   {
     "id": 9,
-    "country": "United States",
-    "city": "Miami",
-    "state": "FL",
-    "address": "1234 Ocean Dr",
-    "postalCode": "33139",
-    "coordinates": "POINT(-80.130045 25.782551)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Vastrapur",
+    "postalCode": "380015",
+    "coordinates": "POINT(72.52729034415992 23.037943213134238)"
   },
   {
     "id": 10,
-    "country": "United States",
-    "city": "Beverly Hills",
-    "state": "CA",
-    "address": "789 Rodeo Dr",
-    "postalCode": "90210",
-    "coordinates": "POINT(-118.400356 34.073620)"
+    "country": "India",
+    "city": "Ahmedabad",
+    "state": "Gujarat",
+    "address": "Thaltej",
+    "postalCode": "380059",
+    "coordinates": "POINT(72.5151457609791 23.047229774054784)"
+  },
+  {
+    "id": 11,
+    "country": "India",
+    "city": "Bharuch",
+    "state": "Gujarat",
+    "address": "Saibaba Nagar",
+    "postalCode": "392001",
+    "coordinates": "POINT(72.98711811305516 21.713477027286586)"
   }
 ]
