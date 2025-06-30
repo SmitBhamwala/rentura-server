@@ -81,7 +81,7 @@ export const getProperties = async (
 
     if (amenities && amenities !== "any") {
       const amenitiesArray = (amenities as string).split(",");
-      whereConditions.push(Prisma.sql`p."amenities" @> ${amenitiesArray}`);
+      whereConditions.push(Prisma.sql`p."amenities" @> ARRAY[${Prisma.join(amenitiesArray)}]::"Amenity"[]`);
     }
 
     if (availableFrom && availableFrom !== "any") {
