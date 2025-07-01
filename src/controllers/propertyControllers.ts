@@ -91,10 +91,10 @@ export const getProperties = async (
         const date = new Date(availableFromDate);
         if (!isNaN(date.getTime())) {
           whereConditions.push(
-            Prisma.sql`EXISTS (
+            Prisma.sql`NOT EXISTS (
               SELECT 1 FROM "Lease" l
               WHERE l."propertyId" = p.id
-              AND l."startDate" <= ${date.toISOString()}
+              AND ${date.toISOString()}::timestamp BETWEEN l."startDate" AND l."endDate"
             )`
           );
         }
