@@ -30,9 +30,16 @@ export const getProperties = async (
       availableFrom,
       latitude,
       longitude,
+      location,
     } = req.query;
 
     let whereConditions: Prisma.Sql[] = [];
+
+    if (location && typeof location === "string") {
+      whereConditions.push(
+        Prisma.sql`LOWER(l.city) LIKE LOWER(${`%${location}%`})`
+      );
+    }
 
     if (favoriteIds) {
       const favoriteIdsArray = (favoriteIds as string).split(",").map(Number);

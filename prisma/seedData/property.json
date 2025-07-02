@@ -176,7 +176,7 @@
   },
   {
     "id": 8,
-    "name": "Urban Micro-Apartment",
+    "name": "Urban Exquisite-Apartment",
     "description": "Compact and efficient living space in the heart of the city.",
     "pricePerMonth": 1000.0,
     "securityDeposit": 1000.0,
@@ -248,5 +248,30 @@
     "numberOfReviews": 8,
     "locationId": 10,
     "managerCognitoId": "us-east-2:01234567-90ab-cdef-1234-567890abcdef"
+  },
+  {
+    "id": 11,
+    "name": "Luxury Penthouse",
+    "description": "Stunning penthouse with panoramic city views and high-end finishes.",
+    "pricePerMonth": 5000.0,
+    "securityDeposit": 5000.0,
+    "applicationFee": 100.0,
+    "photoUrls": [
+      "https://example.com/penthouse1.jpg",
+      "https://example.com/penthouse2.jpg"
+    ],
+    "amenities": ["AirConditioning", "WasherDryer", "Gym", "Pool"],
+    "highlights": ["GreatView"],
+    "isPetsAllowed": true,
+    "isParkingIncluded": false,
+    "beds": 3,
+    "baths": 3,
+    "squareFeet": 2500,
+    "propertyType": "Apartment",
+    "postedDate": "2023-07-01T00:00:00Z",
+    "averageRating": 5.0,
+    "numberOfReviews": 15,
+    "locationId": 11,
+    "managerCognitoId": "us-east-2:56789012-90ab-cdef-1234-567890abcdef"
   }
 ]
