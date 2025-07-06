@@ -22,7 +22,7 @@
     "averageRating": 4.5,
     "numberOfReviews": 10,
     "locationId": 1,
-    "managerCognitoId": "010be580-60a1-70ae-780e-18a6fd94ad32"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 2,
@@ -47,7 +47,7 @@
     "averageRating": 4.8,
     "numberOfReviews": 5,
     "locationId": 2,
-    "managerCognitoId": "us-east-2:23456789-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 3,
@@ -72,7 +72,7 @@
     "averageRating": 4.7,
     "numberOfReviews": 8,
     "locationId": 3,
-    "managerCognitoId": "us-east-2:34567890-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 4,
@@ -97,7 +97,7 @@
     "averageRating": 4.9,
     "numberOfReviews": 12,
     "locationId": 4,
-    "managerCognitoId": "us-east-2:45678901-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 5,
@@ -122,7 +122,7 @@
     "averageRating": 5.0,
     "numberOfReviews": 15,
     "locationId": 5,
-    "managerCognitoId": "us-east-2:56789012-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 6,
@@ -147,7 +147,7 @@
     "averageRating": 4.2,
     "numberOfReviews": 6,
     "locationId": 6,
-    "managerCognitoId": "us-east-2:67890123-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 7,
@@ -172,7 +172,7 @@
     "averageRating": 4.6,
     "numberOfReviews": 9,
     "locationId": 7,
-    "managerCognitoId": "us-east-2:78901234-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 8,
@@ -197,7 +197,7 @@
     "averageRating": 4.3,
     "numberOfReviews": 7,
     "locationId": 8,
-    "managerCognitoId": "us-east-2:89012345-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 9,
@@ -222,7 +222,7 @@
     "averageRating": 4.9,
     "numberOfReviews": 11,
     "locationId": 9,
-    "managerCognitoId": "us-east-2:90123456-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 10,
@@ -247,7 +247,7 @@
     "averageRating": 4.7,
     "numberOfReviews": 8,
     "locationId": 10,
-    "managerCognitoId": "us-east-2:01234567-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   },
   {
     "id": 11,
@@ -272,6 +272,6 @@
     "averageRating": 5.0,
     "numberOfReviews": 15,
     "locationId": 11,
-    "managerCognitoId": "us-east-2:56789012-90ab-cdef-1234-567890abcdef"
+    "managerCognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07"
   }
 ]

@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "cognitoId": "010be580-60a1-70ae-780e-18a6fd94ad32",
-    "name": "John Smith",
-    "email": "john.smith@example.com",
-    "phoneNumber": "+1 (555) 123-4567"
+    "cognitoId": "31d32daa-a0c1-70a2-b544-e95fea5c0d07",
+    "name": "Manager Smit",
+    "email": "smit.unlocked@example.com",
+    "phoneNumber": "9876543210"
   },
   {
     "id": 2,
