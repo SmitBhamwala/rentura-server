@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
 
-import { PrismaClient, Prisma, Location } from "@prisma/client";
-import { wktToGeoJSON } from "@terraformer/wkt";
-import { Upload } from "@aws-sdk/lib-storage";
 import { S3Client } from "@aws-sdk/client-s3";
+import { Upload } from "@aws-sdk/lib-storage";
+import { Location, Prisma, PrismaClient } from "@prisma/client";
+import { wktToGeoJSON } from "@terraformer/wkt";
 import axios from "axios";
 
 const prisma = new PrismaClient();
 
 const s3Client = new S3Client({
-  region: process.env.AWS_REGION,
+  region: process.env.AWS_REGION
 });
 
 export const getProperties = async (
@@ -30,7 +30,7 @@ export const getProperties = async (
       availableFrom,
       latitude,
       longitude,
-      location,
+      location
     } = req.query;
 
     let whereConditions: Prisma.Sql[] = [];
@@ -88,7 +88,11 @@ export const getProperties = async (
 
     if (amenities && amenities !== "any") {
       const amenitiesArray = (amenities as string).split(",");
-      whereConditions.push(Prisma.sql`p."amenities" @> ARRAY[${Prisma.join(amenitiesArray)}]::"Amenity"[]`);
+      whereConditions.push(
+        Prisma.sql`p."amenities" @> ARRAY[${Prisma.join(
+          amenitiesArray
+        )}]::"Amenity"[]`
+      );
     }
 
     if (availableFrom && availableFrom !== "any") {
@@ -152,7 +156,7 @@ export const getProperties = async (
     res.status(200).json(properties);
   } catch (error: any) {
     res.status(500).json({
-      message: `Error retrieving properties: ${error.message}`,
+      message: `Error retrieving properties: ${error.message}`
     });
   }
 };
@@ -167,8 +171,8 @@ export const getProperty = async (
     const property = await prisma.property.findUnique({
       where: { id: Number(id) },
       include: {
-        location: true,
-      },
+        location: true
+      }
     });
 
     if (property) {
@@ -185,8 +189,8 @@ export const getProperty = async (
         ...property,
         location: {
           ...property.location,
-          coordinates: { longitude, latitude },
-        },
+          coordinates: { longitude, latitude }
+        }
       };
       res.status(200).json(propertyWithCoordinates);
     }
@@ -197,7 +201,7 @@ export const getProperty = async (
     }
   } catch (error: any) {
     res.status(500).json({
-      message: `Error retrieving property: ${error.message}`,
+      message: `Error retrieving property: ${error.message}`
     });
   }
 };
@@ -224,12 +228,12 @@ export const createProperty = async (
           Bucket: process.env.AWS_S3_BUCKET_NAME!,
           Key: `properties/${Date.now()}-${file.originalname}`,
           Body: file.buffer,
-          ContentType: file.mimetype,
+          ContentType: file.mimetype
         };
 
         const uploadResult = await new Upload({
           client: s3Client,
-          params: uploadParams,
+          params: uploadParams
         }).done();
 
         return uploadResult.Location;
@@ -243,21 +247,21 @@ export const createProperty = async (
         country,
         postalcode: postalCode,
         format: "json",
-        limit: "1",
+        limit: "1"
       }
     ).toString()}`;
 
     const geocodingResponse = await axios.get(geocodingUrl, {
       headers: {
-        "User-Agent": "Rentura (justsomedummyemail@gmail.com)",
-      },
+        "User-Agent": "Rentura (justsomedummyemail@gmail.com)"
+      }
     });
 
     const [longitude, latitude] =
       geocodingResponse.data[0].lon && geocodingResponse.data[0].lat
         ? [
             parseFloat(geocodingResponse.data[0].lon),
-            parseFloat(geocodingResponse.data[0].lat),
+            parseFloat(geocodingResponse.data[0].lat)
           ]
         : [0, 0];
 
@@ -289,18 +293,40 @@ export const createProperty = async (
         applicationFee: parseFloat(propertyData.applicationFee),
         beds: parseInt(propertyData.beds),
         baths: parseFloat(propertyData.baths),
-        squareFeet: parseInt(propertyData.squareFeet),
+        squareFeet: parseInt(propertyData.squareFeet)
       },
       include: {
         location: true,
-        manager: true,
-      },
+        manager: true
+      }
     });
 
     res.status(201).json(newProperty);
   } catch (error: any) {
     res.status(500).json({
-      message: `Error creating property: ${error.message}`,
+      message: `Error creating property: ${error.message}`
+    });
+  }
+};
+
+export const getPropertyLeases = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  try {
+    const { id } = req.params;
+
+    const leases = await prisma.lease.findMany({
+      where: { propertyId: Number(id) },
+      include: {
+        tenant: true
+      }
+    });
+
+    res.status(200).json(leases);
+  } catch (error: any) {
+    res.status(500).json({
+      message: `Error retrieving property leases: ${error.message}`
     });
   }
 };
