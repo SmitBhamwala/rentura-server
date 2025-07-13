@@ -21,10 +21,10 @@
   },
   {
     "id": 3,
-    "cognitoId": "us-east-2:98765432-90ab-cdef-1234-567890abcdef",
-    "name": "Alice Brown",
-    "email": "alice.brown@example.com",
-    "phoneNumber": "+1 (555) 111-2222",
+    "cognitoId": "71336d3a-90f1-70c4-fd38-446c79084d62",
+    "name": "Smit Bhamwala",
+    "email": "smitbhamwala@gmail.com",
+    "phoneNumber": "9876543210",
     "properties": {
       "connect": []
     },

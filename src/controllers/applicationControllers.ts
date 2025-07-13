@@ -13,7 +13,7 @@ export const listApplications = async (
     let whereClause: any = {};
     if (userId && userType) {
       if (userType === "tenant") {
-        whereClause = { tenantId: String(userId) };
+        whereClause = { tenantCognitoId: String(userId) };
       } else if (userType === "manager") {
         whereClause = {
           property: {
