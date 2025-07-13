@@ -126,7 +126,7 @@ export const createApplication = async (
             connect: { id: propertyId }
           },
           tenant: {
-            connect: { id: tenantCognitoId }
+            connect: { cognitoId: tenantCognitoId }
           }
         }
       });
