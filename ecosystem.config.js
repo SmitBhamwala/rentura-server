@@ -1,13 +1,12 @@
-module.export = {
+module.exports = {
   apps: [
     {
-      name: "project-management",
+      name: "rentura-server",
       script: "npm",
       args: "run dev",
 
       env: {
         NODE_ENV: "development",
-        PORT: 3001,
       },
     },
   ],
