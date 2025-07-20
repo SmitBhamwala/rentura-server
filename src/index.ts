@@ -25,7 +25,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors({
   origin: "https://main.d1cv13h3hovhdh.amplifyapp.com",
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  credentials: true,
 }));
 
 /* ROUTES */
