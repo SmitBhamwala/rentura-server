@@ -33,8 +33,6 @@ export const getProperties = async (
       location
     } = req.query;
 
-    console.log("Query parameters location: ", req.query.location);
-
     let whereConditions: Prisma.Sql[] = [];
 
     if (location && typeof location === "string") {
